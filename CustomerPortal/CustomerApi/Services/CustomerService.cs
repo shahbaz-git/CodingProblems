@@ -38,19 +38,31 @@ namespace CustomerApi.Services
                     continue;
                 }
 
-                var custLnameIndex = (int)customer.LastName.First();
-                var customerWLN = _customers.Where(k => (int)k.LastName.FirstOrDefault() <= custLnameIndex).LastOrDefault();
-                var lastNameIndex = _customers.IndexOf(customerWLN);
-
-                var custFnameIndex = (int)customer.FirstName.First();
-                var customerWFN = _customers.Where(k =>
-               (int)k.LastName.FirstOrDefault() <= custLnameIndex &&
-                (int)k.FirstName.FirstOrDefault() <= custFnameIndex).LastOrDefault();
-                var firstNameIndex = _customers.IndexOf(customerWFN);
-                _customers.Insert(firstNameIndex + 1, customer);
+                int insertPostion = GetInsertPosition(_customers, customer) + 1;
+                _customers.Insert(insertPostion, customer);
             }
 
             return await Task.FromResult(result);
+        }
+
+        /// <summary>
+        /// Gets the index position after which a new entry can be added.
+        /// </summary>
+        /// <param name="_customers">The list of exisitng customers.</param>
+        /// <param name="customer">The customer to be added.</param>
+        /// <returns>The index position after which a new entry can be added.</returns>
+        private static int GetInsertPosition(List<Customer> _customers, Customer customer)
+        {
+            var customerLastNameIndex = (int)customer.LastName.First();
+            var lastRecordAsPerLastName = _customers.Where(k => (int)k.LastName.FirstOrDefault() <= customerLastNameIndex).LastOrDefault();
+            var indexAsPerLastName = _customers.IndexOf(lastRecordAsPerLastName);
+
+            var customerFirstNameIndex = (int)customer.FirstName.First();
+            var lastRecordAsPerFirstName = _customers.Where(k =>
+           (int)k.LastName.FirstOrDefault() <= customerFirstNameIndex &&
+            (int)k.FirstName.FirstOrDefault() <= customerLastNameIndex).LastOrDefault();
+
+            return _customers.IndexOf(lastRecordAsPerFirstName);
         }
     }
 }
