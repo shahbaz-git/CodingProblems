@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerApi", "CustomerPortal\CustomerApi\CustomerApi.csproj", "{904AC3AE-E1BC-4F4E-AC14-22EFE451DCBF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATMDemo", "ATMDemo\ATMDemo.csproj", "{3D858692-16D1-4C7F-BD82-3A4C09846FD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{904AC3AE-E1BC-4F4E-AC14-22EFE451DCBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{904AC3AE-E1BC-4F4E-AC14-22EFE451DCBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{904AC3AE-E1BC-4F4E-AC14-22EFE451DCBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{904AC3AE-E1BC-4F4E-AC14-22EFE451DCBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D858692-16D1-4C7F-BD82-3A4C09846FD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D858692-16D1-4C7F-BD82-3A4C09846FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D858692-16D1-4C7F-BD82-3A4C09846FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D858692-16D1-4C7F-BD82-3A4C09846FD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A04B9498-CED3-4BCB-83B3-4AFB7E1D57C7}
+	EndGlobalSection
+EndGlobal
